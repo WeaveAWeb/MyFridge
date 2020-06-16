@@ -2,6 +2,6 @@
  $host = 'localhost';
  $user = 'root';
  $pw = 'change153';
- $dbName = 'naver';
+ $dbName = 'fridge';
  $dbConnect = new mysqli($host, $user, $pw, $dbName);
  ?>

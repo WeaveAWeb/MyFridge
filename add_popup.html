@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <form name="add" method="post" action="Add.php">
+       <input type="text" id="kind" name="kind" style="display:none" value="kind_null"/>
+       <script>
+       document.getElementById("kind").value=opener.document.getElementById("kind").value;
+      </script>
+        <input type="radio" name="name" value="chicken"/>치킨
+        <input type="radio" name="name" value="slicedPork"/>대패삼겹살
+        <input type="radio" name="name" value="porkBelly"/>삼겹살
+        <input type="radio" name="name" value="chickenBreast"/>닭가슴살
+       amount: <input type="text" name="amount"><br>
+       e_date: <input type="date" name="e_date"><br>
+       <input type=submit value="추가" name="add">
+  </form>
+</body>
+</html>

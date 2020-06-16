@@ -1,46 +1,41 @@
-function openFridge(){
-  if(document.getElementById("fridge_btn").value=="open"){
-  document.getElementById("fridge").src="fridge_opened.png";
-  document.getElementById("fridge_btn").value="close";
-  document.getElementById("instantBtn").style.display="block";
-  // document.getElementById("add_instant").disable="flase";
+function show_fridge(){
+  window.open("dbRead.php","add_popup","width=400,height=300,left=400,top=200");
 }
-else if(document.getElementById("fridge_btn").value=="close"){
-  document.getElementById("fridge").src="fridge_closed.png";
-  document.getElementById("fridge_btn").value="open";
-  document.getElementById("instantBtn").style.display="none";
-  document.getElementById("instantList").style.display="none";
-}
+function popup(){
+  window.open("add_popup.html","add_popup","width=400,height=300,left=400,top=200");
 }
 
-function showInst(){
-  document.getElementById("instantList").style.display="block";
+function add_meat(){
+  document.getElementById("kind").value="meat";
+  popup();
 }
-function closeList(){
-  document.getElementById("instantList").style.display="none";
+function add_grilled(){
+  document.getElementById("kind").value="meat";
+  document.getElementById("name").value="slicedPork";
+  popup();
 }
-
-function chickenClick(){
-  if(document.getElementById("chicken").style.opacity=="1"){
-  document.getElementById("chicken").style.opacity="0.5";}
-  else if(document.getElementById("chicken").style.opacity=="0.5"){
-  document.getElementById("chicken").style.opacity="1";}
+function add_pork(){
+  document.getElementById("kind").value="meat";
+  document.getElementById("name").value="porkBelly";
+  popup();
 }
-function mandooClick(){
-  if(document.getElementById("mandoo").style.opacity=="1"){
-  document.getElementById("mandoo").style.opacity="0.5";}
-  else if(document.getElementById("mandoo").style.opacity=="0.5"){
-  document.getElementById("mandoo").style.opacity="1";}
+function add_onion(){
+  document.getElementById("kind").value="vegetable";
+  document.getElementById("name").value="onion";
+  popup();
 }
-function dongasClick(){
-  if(document.getElementById("dongas").style.opacity=="1"){
-  document.getElementById("dongas").style.opacity="0.5";}
-  else if(document.getElementById("dongas").style.opacity=="0.5"){
-  document.getElementById("dongas").style.opacity="1";}
+function add_pa(){
+  document.getElementById("kind").value="vegetable";
+  document.getElementById("name").value="파";
+  popup();
 }
-function pizzaClick(){
-  if(document.getElementById("pizza").style.opacity=="1"){
-  document.getElementById("pizza").style.opacity="0.5";}
-  else if(document.getElementById("pizza").style.opacity=="0.5"){
-  document.getElementById("pizza").style.opacity="1";}
+function add_potato(){
+  document.getElementById("kind").value="vegetable";
+  document.getElementById("name").value="감자";
+  popup();
+}
+function add_carrot(){
+  document.getElementById("kind").value="vegetable";
+  document.getElementById("name").value="당근";
+  popup();
 }

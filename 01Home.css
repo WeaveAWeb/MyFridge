@@ -13,10 +13,6 @@ body{
 	margin: 30px;
 }
 
-#nav{
-
-}
-
 #content{
 	color: white;
 	margin: 100px;
@@ -25,10 +21,10 @@ body{
 #fixed{
 	position: fixed;
 	top: 400px;
-	right: -200px;
+	right: -100px;
 	transform: rotate(270deg);
 	color: white;
-	font-size:30px;
+	font-size:20px;
 }
 
 #footer{

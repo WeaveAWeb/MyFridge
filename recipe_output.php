@@ -2,38 +2,10 @@
 <?php
 	include "recipe_dbConnect.php";
 	mysqli_set_charset($dbConnect,"utf8");
-	$result = mysqli_query($dbConnect,"SELECT * FROM testtable");
-
+	$num=3;
+	$result = mysqli_query($dbConnect,"SELECT * FROM testtable where id='$num';");
  $row = mysqli_fetch_array($result);
-   // $Cook_Title = isset($_POST['Cook_Title']) ? $_POST['Cook_Title'] : false;
-   // $Cook_info = isset($_POST['Cook_info']) ? $_POST['Cook_info'] : false;
-   //$cook_cag_1 = isset($_POST['cook_cag_1']) ? $_POST['cook_cag_1'] : false;
-   $cook_cag_2 = isset($_POST['cook_cag_2']) ? $_POST['cook_cag_2'] : false;
-   $cook_info_1 = isset($_POST['cook_info_1']) ? $_POST['cook_info_1'] : false;
-   $cook_info_2 = isset($_POST['cook_info_2']) ? $_POST['cook_info_2'] : false;
-   $cook_info_3 = isset($_POST['cook_info_3']) ? $_POST['cook_info_3'] : false;
    
-   $cook_info_3 = isset($_POST['cook_info_3']) ? $_POST['cook_info_3'] : false;
-   
-   $guesses = isset($_POST['guesses']) ? $_POST['guesses'] : false;
-   $guesses2 = isset($_POST['guesses2']) ? $_POST['guesses2'] : false;
-   
-   $cok_material_nm1 = isset($_POST['cok_material_nm1']) ? $_POST['cok_material_nm1'] : false;
-   $cok_material_amt1 = isset($_POST['cok_material_amt1']) ? $_POST['cok_material_amt1'] : false;
-   $cok_material_nm2 = isset($_POST['cok_material_nm2']) ? $_POST['cok_material_nm2'] : false;
-   $cok_material_amt2 = isset($_POST['cok_material_amt2']) ? $_POST['cok_material_amt2'] : false;
-   $cok_material_nm3 = isset($_POST['cok_material_nm3']) ? $_POST['cok_material_nm3'] : false;
-   $cok_material_amt3 = isset($_POST['cok_material_amt3']) ? $_POST['cok_material_amt3'] : false;
-   $cok_material_nm4 = isset($_POST['cok_material_nm4']) ? $_POST['cok_material_nm4'] : false;
-   $cok_material_amt4 = isset($_POST['cok_material_amt4']) ? $_POST['cok_material_amt4'] : false;
-   
-   $recipe_step1 = isset($_POST['recipe_step1']) ? $_POST['recipe_step1'] : false;
-   $recipe_step2 = isset($_POST['recipe_step2']) ? $_POST['recipe_step2'] : false;
-   $recipe_step3 = isset($_POST['recipe_step3']) ? $_POST['recipe_step3'] : false;
-   $recipe_step4 = isset($_POST['recipe_step4']) ? $_POST['recipe_step4'] : false;
-   $recipe_step5 = isset($_POST['recipe_step5']) ? $_POST['recipe_step5'] : false;
-   $recipe_step6 = isset($_POST['recipe_step5']) ? $_POST['recipe_step5'] : false;
-   $recipe_step7 = isset($_POST['recipe_step5']) ? $_POST['recipe_step5'] : false;
    
   ?> 
   

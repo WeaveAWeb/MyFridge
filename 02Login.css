@@ -17,6 +17,9 @@ body{
 	text-align: center;
 	color: white;
 	letter-spacing: 15px;
+
+	margin-top: 50px;
+	margin-bottom: 100px;
 }
 
 #content{
@@ -39,10 +42,10 @@ form{
 #fixed{
 	position: fixed;
 	top: 400px;
-	right: -200px;
+	right: -100px;
 	transform: rotate(270deg);
 	color: white;
-	font-size:30px;
+	font-size:20px;
 }
 
 #footer{

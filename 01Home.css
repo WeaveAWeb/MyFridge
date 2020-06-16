@@ -1,0 +1,93 @@
+body{
+	background-image: url("backgroundimage.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+#header{
+	height: 30px;
+	font-size: 20px;
+	float: right;
+
+	margin: 30px;
+}
+
+#nav{
+
+}
+
+#content{
+	color: white;
+	margin: 100px;
+}
+
+#fixed{
+	position: fixed;
+	top: 400px;
+	right: -200px;
+	transform: rotate(270deg);
+	color: white;
+	font-size:30px;
+}
+
+#footer{
+
+
+}
+
+h2{
+
+	font-size: 100px;
+	margin: 0px;
+
+}
+
+h1{
+
+	font-size: 150px;
+	margin-bottom: 50px;
+
+}
+
+button{
+	border: 1px solid white;
+	outline: 0px;
+	color: rgb(98,106,126);
+	background-color: white;
+	padding: 5px;
+	font-size: 25px;
+
+	margin-left: 10px;
+	padding: 10px 20px 10px 20px;
+}
+
+button:active{
+	color: white;
+	background-color: rgb(98,106,126);
+}
+
+span{
+	color: white;
+	size: 200%;
+}
+
+ul{
+	display: inline;
+	margin-right: 30px;
+}
+
+ul li{
+	display: inline;
+}
+
+ul li a{
+	color: white;
+	padding: 10px 20px 10px 20px;
+}
+
+ul li a:hover{
+	color: white;
+	text-decoration: none;
+	background-color: rgba(255, 255, 255, 0.2);
+}

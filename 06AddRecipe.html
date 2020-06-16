@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="06AddRecipe.css">
+
+		<script language="javascript">
+		<!--재료 추가 삭제 함수-->
+		var i = 1;
+		var oTbl;
+		var guess=1;
+		//Row 추가
+		function insRow() {
+		  oTbl = document.getElementById("addTable");
+		  var oRow = oTbl.insertRow();
+		  oRow.onmouseover=function(){oTbl.clickedRowIndex=this.rowIndex}; //clickedRowIndex - 클릭한 Row의 위치를 확인;
+		  var oCell = oRow.insertCell();
+
+		  //삽입될 Form Tag
+		  i++;
+		  var frmTag_igr = "<input type=text name=cok_material_nm"+i+" id=cok_material style=width:100px;display:lnline; height:20px;><input type=text name=cok_material_amt"+i+" id=cok_material style=width:100px;display:lnline; height:20px;>";
+		  frmTag_igr += "<input type=button value='삭제' onClick='removeRow()' style='cursor:hand'>";
+		  oCell.innerHTML = frmTag_igr;
+
+		  guess++;
+		  document.getElementById("guesses").value=guess;
+		}
+
+		//Row 삭제
+		function removeRow() {
+		  oTbl.deleteRow(oTbl.clickedRowIndex);
+		}
+
+		//빈칸 있는지 체크
+		function frmCheck()
+		{
+			var count =0;
+		  var frm = document.form;
+		  for( var i = 0; i <= frm.elements.length - 1; i++ ){
+		     if( frm.elements[i].id == "cok_material" || frm.elements[i].id == "recipe_step")
+		     {
+		         if( !frm.elements[i].value ){
+		             alert("텍스트박스에 값을 입력하세요!");
+		                 frm.elements[i].focus();
+						 count++;
+					return ; //빈칸이 있을 경우
+		          }
+
+		      }
+
+		   }
+		   if(!count){ // 빈칸이 없을 경우 submit으로 넘어감
+			  frm.submit();
+			  }
+		 }
+
+
+		<!--레시피 추가 삭제 함수-->
+		 var j=1;
+		var oTbl2;
+		var guess2=1;
+		function insRow2() {
+		  oTbl2 = document.getElementById("addTable2");
+		  var oRow2 = oTbl2.insertRow();
+		  oRow2.onmouseover=function(){oTbl2.clickedRowIndex=this.rowIndex}; //clickedRowIndex - 클릭한 Row의 위치를 확인;
+		  var oCell2 = oRow2.insertCell();
+
+		  //삽입될 Form Tag
+		  j++;
+		  var frmTag_rec = "<input type=text name=recipe_step"+j+" id=recipe_step style=width:500px;height:50px;/>";
+		  frmTag_rec += "<input type=button value='삭제' onClick='removeRow2()' style='cursor:hand'>";
+		  oCell2.innerHTML = frmTag_rec;
+
+		  guess2++;
+		  document.getElementById("guesses2").value=guess2;
+		}
+
+		//Row 삭제
+		function removeRow2() {
+		  oTbl2.deleteRow(oTbl2.clickedRowIndex);
+		}
+
+		<!--이미지 첨부하기-->
+		 function previewImage(targetObj, View_area) {
+			var preview = document.getElementById(View_area); //div id
+			var ua = window.navigator.userAgent;
+
+		  //ie일때(IE8 이하에서만 작동)
+			if (ua.indexOf("MSIE") > -1) {
+				targetObj.select();
+				try {
+					var src = document.selection.createRange().text; // get file full path(IE9, IE10에서 사용 불가)
+					var ie_preview_error = document.getElementById("ie_preview_error_" + View_area);
+
+
+					if (ie_preview_error) {
+						preview.removeChild(ie_preview_error); //error가 있으면 delete
+					}
+
+					var img = document.getElementById(View_area); //이미지가 뿌려질 곳
+
+					//이미지 로딩, sizingMethod는 div에 맞춰서 사이즈를 자동조절 하는 역할
+					img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+src+"', sizingMethod='scale')";
+				} catch (e) {
+					if (!document.getElementById("ie_preview_error_" + View_area)) {
+						var info = document.createElement("<p>");
+						info.id = "ie_preview_error_" + View_area;
+						info.innerHTML = e.name;
+						preview.insertBefore(info, null);
+					}
+				}
+		  //ie가 아닐때(크롬, 사파리, FF)
+			} else {
+				var files = targetObj.files;
+				for ( var i = 0; i < files.length; i++) {
+					var file = files[i];
+					var imageType = /image.*/; //이미지 파일일경우만.. 뿌려준다.
+					if (!file.type.match(imageType))
+						continue;
+					var prevImg = document.getElementById("prev_" + View_area); //이전에 미리보기가 있다면 삭제
+					if (prevImg) {
+						preview.removeChild(prevImg);
+					}
+					var img = document.createElement("img");
+					img.id = "prev_" + View_area;
+					img.classList.add("obj");
+					img.file = file;
+					img.style.width = '300px';
+					img.style.height = '300px';
+					preview.appendChild(img);
+					if (window.FileReader) { // FireFox, Chrome, Opera 확인.
+						var reader = new FileReader();
+						reader.onloadend = (function(aImg) {
+							return function(e) {
+								aImg.src = e.target.result;
+							};
+						})(img);
+						reader.readAsDataURL(file);
+					} else { // safari is not supported FileReader
+						//alert('not supported FileReader');
+						if (!document.getElementById("sfr_preview_error_"
+								+ View_area)) {
+							var info = document.createElement("p");
+							info.id = "sfr_preview_error_" + View_area;
+							info.innerHTML = "not supported FileReader";
+							preview.insertBefore(info, null);
+						}
+					}
+				}
+			}
+		}
+		</script>
+
+	</head>
+
+
+	<body>
+
+		<nav class="navba navbar-collapse">
+			<div id="header" class="container-fluid">
+				<ul>
+					<li><a href="#">INFO</a></li>
+					<li><a href="02Login.html">LOGOUT</a></li>
+					<li><a href="03SignUp.html">MY PAGE</a></li>
+				</ul>
+
+				<span class="glyphicon glyphicon-menu-hamburger"></span>
+			</div>
+		</nav>
+
+		<div id="nav" class="container-fluid">
+			<h1 class="h2">ADD RECIPE</h1>
+		</div>
+
+
+		<div id="fridge">
+
+		<div id="content" class="container-fluid">
+
+			<form method="post" name="form" action="recipe_output.php">
+
+			<h1 id="title">Tell Us About Your Recipe!</h1><br>
+
+			<div class="line">
+				<!--요리 이름-->
+				<a class="sub">Name : </a>
+				<input type="text" name="Cook_Title"><br>
+			</div>
+
+			<div class="line">
+				<input name="guesses" id="guesses" style="width:50px;display:none;"/>
+				<input name="guesses2" id="guesses2" style="width:50px;display:none;"/>
+
+				<a class="sub">Explanation : </a>
+					<!--추가한 만큼 value 안보이게 보내주기-->
+					<input type="text" name="Cook_info"><br>
+			</div>
+
+			<div class="line">
+				<!--요리 설명-->
+				<a class="sub">Category : </a>
+				<select name="cook_cag_1">
+					<option>종류별</option>
+					<option value="밑반찬">밑반찬</option>
+					<option value="메인반찬">메인반찬</option>
+					<option value="국/탕">국/탕</option>
+					<option value="면/만두">면/만두</option>
+					<option value="밥/죽/떡">밥/죽</option>
+					<option value="양념/소스">양념/소스</option>
+					<option value="빵/과자/디저트">빵/과자/디저트</option>
+					<option value="차/음료">차/음료</option>
+					<option value="기타">기타</option>
+				</select>
+
+				<select name="cook_cag_2">
+					<option>상황별</option>
+					<option value="일상">일상</option>
+					<option value="손님접대/명절">손님접대/명절</option>
+					<option value="안주/야식">안주/야식</option>
+					<option value="다이어트">다이어트</option>
+					<option value="간편/스피드">간편/스피드</option>
+					<option value="간식">간식</option>
+					<option value="기타">기타</option>
+				</select>
+			</div>
+
+			<div class="line">
+				<!--요리정보-->
+				<a class="sub">More infomation : </a>
+				<select name="cook_info_1">
+					<option>인원</option>
+					<option value="혼밥">혼밥</option>
+					<option value="2-3인분">2-3인분</option>
+					<option value="4-5인분">4-5인분</option>
+					<option value="6인분이상">6인분이상</option>
+				</select>
+
+				<select name="cook_info_2">
+					<option>시간</option>
+					<option value="5분이내">5분이내</option>
+					<option value="10분이내">10분이내</option>
+					<option value="30분이내">30분이내</option>
+					<option value="1시간이내">1시간이내</option>
+					<option value="2시간이내">2시간이내</option>
+					<option value="2시간이상">2시간이상</option>
+				</select>
+
+				<select name="cook_info_3">
+					<option>난이도</option>
+					<option value="간단">간단</option>
+					<option value="보통">보통</option>
+					<option value="심화">심화</option>
+				</select>
+
+			</div>
+
+			<div class="line">
+				<a class="sub">Ingredients : </a>
+				<input name="addButton" type="button" style="cursor:hand" onClick="insRow()" value="추가">
+				<font color="#FF0000">*</font>추가버튼을 클릭해 보세요.<br><br>
+
+				<table id="addTable" width="550" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" border="0">
+					<tr>
+						<td>
+							<input type="text" name="cok_material_nm1" id="cok_material" style="width:100px;display:lnline; height:20px;" placeholder="예> 돼지고기"> <input type="text" name="cok_material_amt1" id="cok_material"style="width:100px;display:lnline; height:20px;" placeholder="예> 300g">
+						</td>
+						<td align="left"/>
+				</tr>
+				</table>
+
+			</div>
+
+			<div class="line">
+				<a class="sub">Steps : </a>
+				<input name="addButton" type="button" style="cursor:hand" onClick="insRow2()" value="추가">
+				<font color="#FF0000">*</font>추가버튼을 클릭해 보세요.<br><br>
+
+				<table id="addTable2" width="550" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" border="0">
+					<tr>
+						<td>
+							<input type="text" name="recipe_step1" id="recipe_step" style="width:500px; height:50px; word-wrap:break-word;" placeholder="예> 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요">
+						</td>
+						<td align="left"/>
+					</tr>
+				</table>
+
+			</div>
+
+			<!--사진업로드-->
+			<div id="imageDiv">
+
+			<div id='View_area' style='position:relative; width: 100px; height: 100px; color: black; border: 0px solid black; display: inline; '></div>
+			<input type="file" name="profile_pt" id="profile_pt" onchange="previewImage(this,'View_area')" style="margin-left: 200px;">
+
+			</div>
+
+			<input id="btn_done" type="button" value="Save" onclick="frmCheck()"/>
+
+			</form>
+
+		</div>
+
+		</div>
+
+		<script src="jquery-3.5.1.min.js"></script>
+		<script src="owl.carousel.min.js"></script>
+		<script src="jquer.js"></script>
+
+		<div id="fixed" class="container-fluid">
+			<p>OpenSourceWebSoftware / Team WWW</p>
+		</div>
+
+		<div id="footer">
+
+		</div>
+
+
+	</body>
+
+
+</html>

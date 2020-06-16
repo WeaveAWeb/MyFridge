@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>자취방 냉장고</title>
+		
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<style>
+			
+			img{
+				width: 300px;
+				height: 300px;
+				
+				margin: 40px;
+			}
+			
+			img:hover{
+				   filter: brightness(70%);
+			}
+			
+			#title{
+				display: inline;
+			}
+			
+			ul{
+				display: inline;
+				
+				margin: 0px;
+			}
+			
+			ul li{
+				display: inline;
+			}
+			
+			#header ul{
+				float: right;
+				line-height: 40px;
+			}
+			
+			#header ul li a{
+				color: rgb(127, 127, 127);
+				font-size: 20px;
+				text-decoration: none;
+				font-weight: bold;
+				
+				padding: 15px;
+				margin: 5px;
+			}
+			
+			#header ul li a:hover{
+				color: black;
+				background-color: rgb(242, 242, 242);
+			}	
+			
+			#nav ul li a{
+				color: white;
+				font-size: large;
+				text-decoration: none;
+				font-weight: bold;
+				
+				margin: 0px 40px 0px 0px;
+			}
+			
+			#nav ul li a:hover{
+				text-decoration: underline;
+			}
+			
+			#contents_title{
+				letter-spacing: 8px;
+			}
+			
+			#header{
+				background-color: rgb(208, 206, 206); 
+				letter-spacing: 4px;
+				
+				padding: 35px 35px 35px 35px;
+				margin: 0px;
+			}
+			
+			#nav{
+				background-color: rgb(127, 127, 127);
+				letter-spacing: 4px;
+				
+				padding: 20px 20px 20px 20px;
+				text-align: center;
+			}
+			
+			#contents{
+				background-color: rgb(242, 242, 242); 
+				text-align: center;
+				
+				padding: 20px 0px 10px 0px;
+				margin: 15px 15px 15px 15px;
+			}
+			
+		</style>
+	
+	</head>
+	
+	<body>
+		
+		<img id="fridge" src="fridge_closed.png" alt="fridge_closed" height="500">
+<br>
+<input type="button" id="fridge_btn" onclick="openFridge()" value="open"></input>
+<input type="button" class="foodBtn" id="instantBtn" onclick="showInst()" style="display:none"></input>
+<div class="foodList" id="instantList">
+  <h3>인스턴트</h3>
+  <button id="chicken" value="chicken"onclick="chickenClick()"style="opacity:1">치킨</button>
+  <button id="mandoo" value="mandoo"onclick="mandooClick()"style="opacity:1">만두</button>
+  <button id="dongas" value="dongas"onclick="dongasClick()"style="opacity:1">돈가스</button>
+  <button id="pizza" value="pizza"onclick="pizzaClick()"style="opacity:1">피자</button>
+
+  <button id="closeList" value="closeList"onclick="closeList()">닫기</button>
+</div>
+		
+	</body>
+
+</html>

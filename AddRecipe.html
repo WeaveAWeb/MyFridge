@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+ <!--자바스크립트 선언-->
+ 
+<script language="javascript">
+<!--재료 추가 삭제 함수-->
+var oTbl;
+//Row 추가
+function insRow() {
+  oTbl = document.getElementById("addTable");
+  var oRow = oTbl.insertRow();
+  oRow.onmouseover=function(){oTbl.clickedRowIndex=this.rowIndex}; //clickedRowIndex - 클릭한 Row의 위치를 확인;
+  var oCell = oRow.insertCell();
+
+  //삽입될 Form Tag
+  var frmTag_igr = "<input type=text name=addText style=width:100px;display:lnline; height:20px;> <input type=text name=addText style=width:100px;display:lnline; height:20px;>";
+  frmTag_igr += "<input type=button value='삭제' onClick='removeRow()' style='cursor:hand'>";
+  oCell.innerHTML = frmTag_igr;
+}
+
+//Row 삭제
+function removeRow() {
+  oTbl.deleteRow(oTbl.clickedRowIndex);
+}
+
+//빈칸 있는지 체크
+function frmCheck()
+{
+  var frm = document.form;
+  
+  for( var i = 0; i <= frm.elements.length - 1; i++ ){
+     if( frm.elements[i].name == "addText" )
+     {
+         if( !frm.elements[i].value ){
+             alert("텍스트박스에 값을 입력하세요!");
+                 frm.elements[i].focus();
+	 return;
+          }
+      }
+   }
+ }
+ 
+ <!--레시피 추가 삭제 함수-->
+var oTbl2;
+function insRow2() {
+  oTbl2 = document.getElementById("addTable2");
+  var oRow2 = oTbl2.insertRow();
+  oRow2.onmouseover=function(){oTbl2.clickedRowIndex=this.rowIndex}; //clickedRowIndex - 클릭한 Row의 위치를 확인;
+  var oCell2 = oRow2.insertCell();
+
+  //삽입될 Form Tag
+  var frmTag_rec = "<input type=text name=addText2 style=width:500px;  height:20px;>";
+  frmTag_rec += "<input type=button value='삭제' onClick='removeRow2()' style='cursor:hand'>";
+  oCell2.innerHTML = frmTag_rec;
+}
+
+//Row 삭제
+function removeRow2() {
+  oTbl2.deleteRow(oTbl2.clickedRowIndex);
+}
+
+//빈칸 있는지 체크
+function frmCheck2()
+{
+  var frm = document.form;
+  
+  for( var i = 0; i <= frm.elements.length - 1; i++ ){
+     if( frm.elements[i].name == "addText2" )
+     {
+         if( !frm.elements[i].value ){
+             alert("텍스트박스에 값을 입력하세요!");
+                 frm.elements[i].focus();
+	 return;
+          }
+      }
+   }
+ }
+ </script>
+  <style>
+  .navbar{
+			border:0;
+			margin-bottom:0;
+			font-size:12px;
+	}
+	.navbar-header li a{
+	}
+	.navbar-nav li a{
+	}
+	.navbar-nav li a:hover{
+		text-decoration:none;
+		color:#9ACD32;
+	}
+	.bg-grey {
+		background-color: #f6f6f6;
+	}
+	#up_btn{
+			text-align:center;
+			position:fixed;
+			top : 600px;
+			right : 10px;
+			background-color: #90EE90;
+	}
+	</style>
+</head>
+<body>
+	<!--로고&네비게이션바-->
+	<nav class="navbar">
+		<div class="container-fluid">
+			<div>
+				<ul class="nav navbar-header navbar-left">
+					<li>LOGO넣을자리</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="">사용가이드</a></li>
+					<li><a href="">마이페이지</a></li>
+					<li><a href="">로그아웃</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--네비게이션바(내 냉장고~요리 둘러보기)-->
+		<div class="container-fluid">
+			<div>
+				<ul class="nav navbar-nav navbar-center">
+					<li><a href="">내 냉장고</a></li>
+					<li><a href="">장보기</a></li>
+					<li><a href="">요리 업로드</a></li>
+					<li><a href="">요리 둘러보기</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+<!--레시피 등록하기-->
+<div>
+	<div class="row bg-grey">
+		<!--요리 기본정보 입력-->
+		<div class="col-sm-7">
+			<h2>레시피 등록하기</h2>
+			<!--요리 이름-->
+			요리 이름 :  <input type="text" name="Cook_Title"><br>
+			<!--요리 설명--> 간단한 설명 : <input type="text" name="Cook_Title"><br>
+			<!--카테고리--> 
+			<table>
+				<tr style="display:inline">
+					<td valgn="top">
+					카테고리별로 보기 : 
+						<select name="cook_cag_1">
+							<option>종류별</option>
+							<option value="밑반찬">밑반찬</option>
+							<option value="메인반찬">메인반찬</option>
+							<option value="국/탕">국/탕</option>
+							<option value="면/만두">면/만두</option>
+							<option value="밥/죽/떡">밥/죽</option>
+							<option value="양념/소스">양념/소스</option>
+							<option value="빵/과자/디저트">빵/과자/디저트</option>
+							<option value="차/음료">차/음료</option>
+							<option value="기타">기타</option>
+						</select>
+					</td>
+				</tr>
+				<tr style="display:inline">
+					<td valgn="top">
+						<select name="cook_cag_2">
+							<option>상황별</option>
+							<option value="일상">일상</option>
+							<option value="손님접대/명절">손님접대/명절</option>
+							<option value="안주/야식">안주/야식</option>
+							<option value="다이어트">다이어트</option>
+							<option value="간편/스피드">간편/스피드</option>
+							<option value="간식">간식</option>
+							<option value="기타">기타</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<!--요리정보--> 
+			<table>
+				<tr style="display:inline">
+					<td valgn="top">
+					요리 정보 : 
+						<select name="cook_info_1">
+							<option>인원</option>
+							<option value="혼밥">혼밥</option>
+							<option value="2-3인분">2-3인분</option>
+							<option value="4-5인분">4-5인분</option>
+							<option value="6인분이상">6인분이상</option>
+						</select>
+					</td>
+				</tr>
+				<tr style="display:inline">
+					<td valgn="top">
+						<select name="cook_info_2">
+							<option>시간</option>
+							<option value="5">5분이내</option>
+							<option value="10">10분이내</option>
+							<option value="30">30분이내</option>
+							<option value="60">1시간이내</option>
+							<option value="120">2시간이내</option>
+							<option value="121">2시간이상</option>
+						</select>
+					</td>
+				</tr>
+				<tr style="display:inline">
+					<td valgn="top">
+						<select name="cook_info_3">
+							<option>난이도</option>
+							<option value="아무나">아무나</option>
+							<option value="초급">초급</option>
+							<option value="중급">중급</option>
+							<option value="고급">고급</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+			<!--사진업로드-->
+		<div class="col-sm-5">
+			<input type="file" id="real-input" class="image_inputType_file" accept="img/*" required multiple>
+			<button class="browse-btn">사진업로드</button>
+			<h5>↓이미지 미리보기</h5>
+			<div id="imagePreview">
+				<!--<img id="img" />-->
+				<img src="example.jpg">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+	<div class="col-sm-12">
+	<h5>재료 : </h5>
+	<form name="form" method="post">
+		<table width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" align="left" bgcolor="#FFFFFF">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td colspan="5" bgcolor="#FFFFFF" height="25" align="left">
+								<input name="addButton" type="button" style="cursor:hand" onClick="insRow()" value="추가">
+								<font color="#FF0000">*</font>추가버튼을 클릭해 보세요.</td>
+						</tr>
+						<tr>
+							<td height="25">
+								<table id="addTable" width="400" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" border="0">
+								<tr>
+									<td><input type="text" name="addText" style="width:100px;display:lnline; height:20px;" placeholder="예> 돼지고기"> <input type="text" name="addText" style="width:100px;display:lnline; height:20px;" placeholder="예> 300g"></td>
+									<td align="left"></td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="button" name="Add_complet" value="확인" onClick="frmCheck();">
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	</div>
+	<div class="row bg-grey">
+	<div class="col-sm-12">
+	<h5>요리순서 : </h5>
+	<form name="form" method="post">
+		<table width="800" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" align="left">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td colspan="5" height="25" align="left">
+								<input name="addButton" type="button" style="cursor:hand" onClick="insRow2()" value="추가">
+								<font color="#FF0000">*</font>추가버튼을 클릭해 보세요.</td>
+						</tr>
+						<tr>
+							<td height="25">
+								<table id="addTable2" width="900" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" border="0">
+								<tr>
+									<td><input type="text" name="addText" style="width:500px; height:20px; word-wrap:break-word;" placeholder="예> 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요"></td>
+									<td align="left"></td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="button" name="Add_complet" value="확인" onClick="frmCheck2();">
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	</div>
+</div>
+<!--저장 버튼-->
+	<div id="up_btn">
+			<a href="">저장</a>
+	</div>
+</body>
+</html>

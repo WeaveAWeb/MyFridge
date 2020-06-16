@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<script type="text/javascript" src="mySignInForm.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="02Login.css">
+			
+	</head>
+	
+	
+	<body>
+		
+		<nav class="navba navbar-collapse">
+			<div id="header" class="container-fluid">
+				<ul>
+					<li><a href="#">INFO</a></li>
+					<li><a href="02Login.html">LOGIN</a></li>
+					<li><a href="03SignUp.html">SIGN UP</a></li>
+				</ul>
+				
+				<span class="glyphicon glyphicon-menu-hamburger"></span>
+			</div>
+		</nav>
+		
+		
+		<div id="nav" class="container-fluid">
+			<h1 class="h2">LOGIN</h1>
+		</div>
+		
+		
+		<div id="content" class="container-fluid">
+			
+			<form name="singIn" action="signIn.php" method="post" onsubmit="return checkSubmit()">
+
+				<div class="line">
+					<a class="sub">ID</a>
+					<input type="text" name="memberId" class="memberId"></input><br>
+				</div>
+				
+				<div class="line">					
+					<a class="sub">PW</a>
+					<input type="text" name="memberPw" class="memberPw"></input><br>
+				</div>
+			
+			</form>
+			
+			<button type="submit" value="로그인" class="submit">LOGIN</button>
+			<button onclick="location.href='03SignUp.html'">SIGN UP</button>
+		</div>
+		
+		
+		<div id="fixed" class="container-fluid">
+			<p>OpenSourceWebSoftware / Team WWW</p>	
+		</div>
+		
+		<div id="footer">
+		
+		</div>		
+		
+		
+	</body>
+
+
+</html>

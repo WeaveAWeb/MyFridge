@@ -1,7 +1,7 @@
 <?php
  $host = 'localhost';
  $user = 'root';
- $pw = 'change153';
+ $pw = 'root';
  $dbName = 'fridge';
  $dbConnect = new mysqli($host, $user, $pw, $dbName);
  ?>

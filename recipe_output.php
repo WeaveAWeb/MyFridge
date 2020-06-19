@@ -130,10 +130,7 @@
 			</ul>
 		</div>
 	<div id="contents" class="container-fluid">
-	<div class="row bg-grey">
-   <?php
-   //if ($Cook_Title&&$Cook_info&&cook_cag_1&&cook_cag_2&&cook_cag_3) {
-    ?> 
+	<div class="row bg-grey"> 
 	<h1><?php echo $row['Cook_Title']; ?> </h1>
 	  <!--이미지 삽입 추가해야 함-->
 	<p><?php echo $row['Cook_info'];?><br>카테고리 : <?php echo $row['cook_cag_1'];?><span style="color:#9ACD32;font-size:20px;"><b> | </b></span> <?php echo $row['cook_cag_2'];?></p>
@@ -174,13 +171,6 @@
 			</div>
 		</div>
 	</div>
-	<?php
-	// 만약 빠진 부분이 있을 때
-   //} else {
-     //echo "task option is required";
-     //exit; 
-   //}
-?>
 </div>
 </div>
 </body>

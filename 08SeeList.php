@@ -1,3 +1,11 @@
+<?php
+	include "recipe_dbConnect.php";
+	mysqli_set_charset($dbConnect,"utf8");
+	$result = mysqli_query($dbConnect,"SELECT * FROM testtable");
+   
+   
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +23,7 @@
 			.item{
 				border: 2px dotted black;
 				line-height: 180px;
-				padding: 50px;
+				padding: 30px;
 				margin-bottom: 50px;
 			}
 
@@ -46,21 +54,18 @@
 		<div id="fridge">
 
 		<div id="content" class="container-fluid" style="padding-bottom: 0px">
-
-			<div class="item">
-				<img src="example.jpg" style="float: left">
-				<div><h1>백종원 김치찌개</h1><p>간단한 재료로도 엄청난 맛을 내는 엄청난 레시피에요!</p></div>
-			</div>
-
-			<div class="item" style="clear: both">
-				<img src="example.jpg" style="float: left">
-				<div><h1>백종원 김치찌개</h1><p style="float:none">간단한 재료로도 엄청난 맛을 내는 엄청난 레시피에요!</p></div>
-			</div>
-
-			<div class="item" style="clear: both">
-				<img src="example.jpg" style="float: left">
-				<div><h1>백종원 김치찌개</h1><p style="float:none">간단한 재료로도 엄청난 맛을 내는 엄청난 레시피에요!</p></div>
-			</div>
+			<?php
+$n = 1;
+while($row = mysqli_fetch_array($result)){
+echo '<div class="item">';
+echo '<img src="example.jpg" style="float: left">';
+echo "<div><h1>". $row['Cook_Title'] ."</h1><p>".$row['Cook_info']."</p></div>";
+echo '</div>';
+$n++;
+}
+mysqli_close($conn);
+			?>
+			
 
 		</div>
 

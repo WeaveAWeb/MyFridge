@@ -1,7 +1,7 @@
 
 function add_meat(){
   document.getElementById("kind").value="meat";
-  window.open("add_popup_meat.html","add_popup","width=480,height=300,left=400,top=200");
+  window.open("add_popup_meat.html","add_popup","width=400,height=300,left=400,top=200");
 }
 function add_vegetable(){
   document.getElementById("kind").value="vegetable";

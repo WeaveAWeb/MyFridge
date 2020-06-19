@@ -19,7 +19,7 @@
 		<nav class="navba navbar-collapse">
 			<div id="header" class="container-fluid">
 				<ul>
-					<li><a href="04MyFridge.html">MY FRIDGE</a></li>
+					<li><a href="04MyFridge.php">MY FRIDGE</a></li>
 					<li><a href="05RecipeRoom.html">RECIPE ROOM</a></li>
 					<li><a href="09Shopping.html">SHOPPING</a></li>
 				</ul>
@@ -40,20 +40,71 @@
 			<h1>Do you need ...</h1><br>
 
 			<div style="width:100%; text-align:center;">
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=4319065171&dispNo=008001083&smid1=common_prd" class="zoom"><img src="chicken.jpg"></a>
 				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=6796440106&dispNo=008001083&smid1=common_prd" class="zoom"><img src="slicedPork.jpg"></a>
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=7029557833&dispNo=008001083&smid1=choice" class="zoom"><img src="porkBelly.jpg"></a>
 				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=5040937287&dispNo=008001087&smid1=ssenpick" class="zoom"><img src="chickenBreast.jpg"></a>
 				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=7127441415&dispNo=008001083&smid1=common_prd" class="zoom"><img src="onion.jpg"></a>
 				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=5489808647&dispNo=008001083&smid1=common_prd" class="zoom"><img src="greenonion.jpg"></a>
 				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=7184525045&dispNo=008001083&smid1=common_prd" class="zoom"><img src="potato.jpg"></a>
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=6504393553&dispNo=008001087&smid1=ssenpick" class="zoom"><img src="carrot.jpg"></a>
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=4490752942&dispNo=008001083&smid1=common_prd" class="zoom"><img src="pizzaCheese.jpg"></a>
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=6722227164&dispNo=008001083&smid1=common_prd" class="zoom"><img src="milk.png"></a>
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=7071193689&dispNo=008001087&smid1=ssenpick" class="zoom"><img src="egg.jpg"></a><br>
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=7168713529&dispNo=008001083&smid1=choice" class="zoom"><img src="mackerel.jpg"></a>
-				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=6837710289&dispNo=008001087&smid1=ssenpick" class="zoom"><img src="shrimp.jpg"></a>
+				<a href="http://shopping.interpark.com/product/productInfo.do?prdNo=7071193689&dispNo=008001087&smid1=ssenpick" class="zoom"><img src="egg.jpg"></a>
       </div>
+
+			<hr><br>
+
+			<h1>Mart near CBNU</h1><br>
+
+			<div id="map" style="width:900px;height:500px; margin-left: auto; margin-right: auto; margin-bottom: 50px;"></div>
+
+    <script>
+    function myMap() {
+      var mapCanvas = document.getElementById("map");
+
+      var goodMorning = new google.maps.LatLng(36.624812, 127.450035);
+      var green = new google.maps.LatLng(36.630030, 127.450077);
+      var hansol = new google.maps.LatLng(36.633164, 127.448678);
+      var family = new google.maps.LatLng(36.634392, 127.456093);
+
+      var mapOptions = { center: goodMorning, zoom: 15 };
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+
+      var marker1 = new google.maps.Marker({
+				position: goodMorning,
+				animation: google.maps.Animation.DROP,
+				icon: 'cart.png'
+			});
+			var marker2 = new google.maps.Marker({
+				position: green,
+				animation: google.maps.Animation.DROP,
+				icon: 'cart.png'
+			});
+			var marker3 = new google.maps.Marker({
+				position: hansol,
+				animation: google.maps.Animation.DROP,
+				icon: 'cart.png'
+			});
+			var marker4 = new google.maps.Marker({
+				position: family,
+				animation: google.maps.Animation.DROP,
+				icon: 'cart.png'
+			});
+
+      marker1.setMap(map);
+			marker2.setMap(map);
+			marker3.setMap(map);
+			marker4.setMap(map);
+
+      var infowindow1 = new google.maps.InfoWindow({ content: "<p>Good Morning Mart</p>" });
+			var infowindow2 = new google.maps.InfoWindow({ content: "<p>Green Mart</p>" });
+			var infowindow3 = new google.maps.InfoWindow({ content: "<p>Hansol Mart</p>" });
+			var infowindow4 = new google.maps.InfoWindow({ content: "<p>Family Mart</p>" });
+
+      infowindow1.open(map,marker1);
+			infowindow2.open(map,marker2);
+			infowindow3.open(map,marker3);
+			infowindow4.open(map,marker4);
+    }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdMmLyIKZ51pvWuDEvUbONJG49cR1YXng&callback=myMap"></script>
 
 		</div>
 

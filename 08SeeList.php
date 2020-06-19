@@ -2,8 +2,8 @@
 	include "recipe_dbConnect.php";
 	mysqli_set_charset($dbConnect,"utf8");
 	$result = mysqli_query($dbConnect,"SELECT * FROM testtable");
-   
-   
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@
 		<nav class="navba navbar-collapse">
 			<div id="header" class="container-fluid">
 				<ul>
-					<li><a href="04MyFridge.html">MY FRIDGE</a></li>
+					<li><a href="04MyFridge.php">MY FRIDGE</a></li>
 					<li><a href="05RecipeRoom.html">RECIPE ROOM</a></li>
 					<li><a href="09Shopping.html">SHOPPING</a></li>
 				</ul>
@@ -65,7 +65,6 @@ $n++;
 }
 mysqli_close($conn);
 ?>
-			
 
 		</div>
 

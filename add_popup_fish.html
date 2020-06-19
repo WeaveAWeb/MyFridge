@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  *{
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <form name="add" method="post" action="Add.php">
+       <input type="text" id="kind" name="kind" style="display:none" value="kind_null"/>
+       <script>
+       document.getElementById("kind").value=opener.document.getElementById("kind").value;
+      </script>
+        <input id="radio_1" type="radio" name="name" value="mackerel"/>고등어
+        <input id="radio_2" type="radio" name="name" value="shrimp"/>새우
+        <input id="radio_3" type="radio" name="name" value="kim"/>김
+        <input id="radio_4" type="radio" name="name" value="tuna"/>참치
+        <input id="radio_5" type="radio" name="name" value="seaweed"/>미역<br>
+       양: <input type="text" name="amount"><br>
+       유통기한: <input type="date" name="e_date"><br>
+       <input type=submit value="추가" name="add">
+  </form>
+  <script type="text/javascript" src="script_myfridge.js"></script>
+
+</body>
+</html>

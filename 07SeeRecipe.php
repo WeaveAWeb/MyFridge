@@ -26,12 +26,12 @@
 	<nav class="navba navbar-collapse">
 		<div id="header" class="container-fluid">
 			<ul>
-				<li><a href="04MyFridge.html">MY FRIDGE</a></li>
+				<li><a href="04MyFridge.php">MY FRIDGE</a></li>
 				<li><a href="05RecipeRoom.html">RECIPE ROOM</a></li>
 				<li><a href="09Shopping.html">SHOPPING</a></li>
 			</ul>
 
-			<span class="glyphicon glyphicon-menu-hamburger" style="color: white; size: 200%;"></span>
+			<span class="glyphicon glyphicon-menu-hamburger"></span>
 		</div>
 	</nav>
 

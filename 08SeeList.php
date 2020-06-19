@@ -54,7 +54,7 @@
 		<div id="fridge">
 
 		<div id="content" class="container-fluid" style="padding-bottom: 0px">
-			<?php
+<?php
 $n = 1;
 while($row = mysqli_fetch_array($result)){
 echo '<div class="item">';
@@ -64,7 +64,7 @@ echo '</div>';
 $n++;
 }
 mysqli_close($conn);
-			?>
+?>
 			
 
 		</div>

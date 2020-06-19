@@ -18,7 +18,6 @@ body{
 	color: white;
 	letter-spacing: 15px;
 
-	margin-top: 50px;
 	margin-bottom: 100px;
 }
 
@@ -110,11 +109,11 @@ input{
 	margin-right: 40px;
 }
 
-.ingredient1, .ingredient2, .btn_add{
+.btn_add{
 	transition: transform .3s;
 }
 
-.ingredient1:hover, .btn_add:hover{
+.btn_add:hover{
 	-ms-transform: scale(2.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);

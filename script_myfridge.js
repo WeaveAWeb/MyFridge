@@ -1,41 +1,98 @@
-function show_fridge(){
-  window.open("dbRead.php","add_popup","width=400,height=300,left=400,top=200");
-}
-function popup(){
-  window.open("add_popup.html","add_popup","width=400,height=300,left=400,top=200");
-}
 
 function add_meat(){
   document.getElementById("kind").value="meat";
-  popup();
+  window.open("add_popup_meat.html","add_popup","width=480,height=300,left=400,top=200");
 }
-function add_grilled(){
-  document.getElementById("kind").value="meat";
+function add_vegetable(){
+  document.getElementById("kind").value="vegetable";
+  window.open("add_popup_vegetable.html","add_popup","width=400,height=300,left=400,top=200");
+}
+function add_eggs(){
+  document.getElementById("kind").value="eggs";
+  window.open("add_popup_eggs.html","add_popup","width=400,height=300,left=400,top=200");
+}
+function add_fish(){
+  document.getElementById("kind").value="fish";
+  window.open("add_popup_fish.html","add_popup","width=400,height=300,left=400,top=200");
+}
+
+function delete_chicken(){
+  document.getElementById("name").value="chicken";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_slicedPork(){
   document.getElementById("name").value="slicedPork";
-  popup();
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
 }
-function add_pork(){
-  document.getElementById("kind").value="meat";
+function delete_porkBelly(){
   document.getElementById("name").value="porkBelly";
-  popup();
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
 }
-function add_onion(){
-  document.getElementById("kind").value="vegetable";
+function delete_chickenBreast(){
+  document.getElementById("name").value="chickenBreast";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_cow(){
+  document.getElementById("name").value="cow";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_onion(){
   document.getElementById("name").value="onion";
-  popup();
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
 }
-function add_pa(){
-  document.getElementById("kind").value="vegetable";
-  document.getElementById("name").value="파";
-  popup();
+function delete_greenOnion(){
+  document.getElementById("name").value="greenOnion";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
 }
-function add_potato(){
-  document.getElementById("kind").value="vegetable";
-  document.getElementById("name").value="감자";
-  popup();
+function delete_potato(){
+  document.getElementById("name").value="potato";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
 }
-function add_carrot(){
-  document.getElementById("kind").value="vegetable";
-  document.getElementById("name").value="당근";
-  popup();
+function delete_carrot(){
+  document.getElementById("name").value="carrot";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_cucumber(){
+  document.getElementById("name").value="cucumber";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_pizzaCheese(){
+  document.getElementById("name").value="pizzaCheese";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_milk(){
+  document.getElementById("name").value="milk";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_egg(){
+  document.getElementById("name").value="egg";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_butter(){
+  document.getElementById("name").value="butter";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_cheese(){
+  document.getElementById("name").value="cheese";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_mackerel(){
+  document.getElementById("name").value="mackerel";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_shrimp(){
+  document.getElementById("name").value="shrimp";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_kim(){
+  document.getElementById("name").value="kim";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_tuna(){
+  document.getElementById("name").value="tuna";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
+}
+function delete_seaweed(){
+  document.getElementById("name").value="seaweed";
+  window.open("delete_popup.html","delete_popup","width=400,height=300,left=400,top=200");
 }

@@ -25,7 +25,6 @@ body{
 #content{
 	color: black;
 	background-color: white;
-	text-align: center;
 
 	padding: 50px;
 }
@@ -56,8 +55,9 @@ body{
 	font-size: 25px;
 	font-weight: bold;
 
-	margin-left: 10px;
-	padding: 15px 30px 15px 30px;
+	margin-top: 20px;
+	margin-left: 230px;
+	padding: 10px 25px 10px 25px;
 }
 
 #btn_done:active{
@@ -98,6 +98,7 @@ select{
 
 #title{
 	margin: 0px;
+	text-align: center;
 }
 
 .h2{

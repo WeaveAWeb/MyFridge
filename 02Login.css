@@ -22,7 +22,7 @@ body{
 	margin-bottom: 100px;
 }
 
-#content{
+/* #content{
 	width: 500px;
 	color: white;
 	border: 5px solid white;
@@ -30,10 +30,20 @@ body{
 
 	padding: 20px 20px 40px 20px;
 	margin: 100px;
+} */
+
+
+#content{
+	color: black;
+	background-color: white;
+	text-decoration: none;
+	text-align: center;
+
+	padding: 50px;
 }
 
 form{
-	margin-bottom: 50px;
+	float: left;
 }
 
 .line{
@@ -54,20 +64,21 @@ form{
 }
 
 button{
-	border: 1px solid white;
+	border: 0.3rem outset rgb(98,106,126);
+	border-radius: 12px;
 	outline: 0px;
 	color: rgb(98,106,126);
 	background-color: white;
-	padding: 5px;
 	font-size: 25px;
+	font-weight: bold;
 
-	margin-left: 10px;
-	padding: 10px 20px 10px 20px;
+	padding: 10px 25px 10px 25px;
 }
 
 button:active{
 	color: white;
 	background-color: rgb(98,106,126);
+	font-weight: normal;
 }
 
 span{
@@ -106,8 +117,22 @@ input{
 }
 
 .sub{
-	font-size: 45px;
-	color: white;
+	color: black;
+	font-size: 30px;
+}
 
-	margin-right: 40px;
+.sub:hover{
+	color: black;
+	text-decoration: none;
+}
+
+#fridge{
+	background-color: rgba(255, 255, 255, 0.2);
+
+	padding: 15px;
+	margin: 0px 400px 100px 400px;
+}
+
+#btn_sign{
+	margin-top: 235px;
 }

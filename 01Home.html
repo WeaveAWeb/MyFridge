@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, intial-scale=1">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,6 +11,27 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="01Home.css">
 
+<!-- 구글차트를 위한 js -->
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['영양상태', '20s', '30s','전체'],
+          ['영양불균형자',  29.8,      19.2,      20.2],
+          ['영양부족자',  21.7,      13.1,      15.4],
+          ['영양과잉자',  8.1,       6.1,      4.8]
+        ]);
+
+        var options = {
+          title: '영양불균형 현황 (단위:%)'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 	</head>
 
 
@@ -37,9 +58,14 @@
 			<button onclick="location.href='04MyFridge.php'">Get Started</button>
 		</div>
 
-		<div id="nav" class="container-fluid">
 
+<hr id="line"><br>
+		<div id="chart_div" class="container-fluid" style="width: 500px; height: 400px; padding-bottom: 30px;">
 		</div>
+		<div class="container-fluid" style="width: 500px;padding-bottom: 80px;">
+			<p style="color:white; text-align:center;">보건복지가족부에 따른 영양불균형 현황 통계에 따르면 20대의 영양불균형의 심각성을 볼 수 있다.<br>자택에 거주하는 학생들 이외의 기숙사, 자취, 하숙 등의 형태로 집 밖으로 나와 생활하는 경우는 불규칙한 식사를 하는 비율이 높고 외식빈도가 높으며 다양하지 않은 식품을 섭취하는 것으로 나타났다. 반면에 편의식품을 선호하는 비율은 높았고 저녁을 과식하는 비율도 높은 부적절한 식사습관을 가지는 것으로 나타났다.</p>
+		</div>
+
 
 		<div id="fixed" class="container-fluid">
 			<p>OpenSourceWebSoftware / Team WWW</p>

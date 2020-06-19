@@ -87,3 +87,8 @@ ul li a:hover{
 	text-decoration: none;
 	background-color: rgba(255, 255, 255, 0.2);
 }
+#line{
+	border: 0;
+  height: 5px;
+  background: #ccc;
+}

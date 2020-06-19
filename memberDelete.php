@@ -1,5 +1,5 @@
 <?php
-include "dbConnect.php";
+include "dbConnect_login.php";
 
  $id=$_POST['id'];
 

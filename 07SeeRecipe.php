@@ -1,8 +1,10 @@
 <!--process2.php-->
 <?php
+
 	include "recipe_dbConnect.php";
 	mysqli_set_charset($dbConnect,"utf8");
-	$num=3;
+	$num = isset($_POST['recinum']) ? $_POST['recinum'] : false;
+	
 	$result = mysqli_query($dbConnect,"SELECT * FROM testtable where id='$num';");
  $row = mysqli_fetch_array($result);
 
@@ -47,7 +49,7 @@
    //if ($Cook_Title&&$Cook_info&&cook_cag_1&&cook_cag_2&&cook_cag_3) {
     ?>
 	<h1 id="foodTitle"><?php echo $row['Cook_Title']; ?> </h1>
-	  <!--이미지 삽입 추가해야 함-->
+	  <?php echo '<img src="example'.$num.'.jpg">'?>
 	<br><p id="foodInfo"><?php echo $row['Cook_info'];?></p><br>
 	<p class="foodInfo2">카테고리 : </p><p class="foodInfo2"><?php echo $row['cook_cag_1'];?></p>
 	<span style="color:#9ACD32;font-size:20px;"><b> | </b></span>

@@ -20,14 +20,33 @@
 		<link rel="stylesheet" type="text/css" href="09Shopping.css">
 
 		<style>
-			.item{
+			.bt {
 				border: 2px dotted black;
 				line-height: 180px;
-				padding: 30px;
 				margin-bottom: 50px;
 			}
-
+			.bt a {
+				display:block;
+			border: #d7d7d7;	
+			padding-top:4px;
+			text-decoration: none;   
+			background-repeat:repeat-x;
+			background:#fcfcfc;
+			color:#9b9b9b;
+			font-size:11px;
+			font-family:"돋움,dotum,굴림,gulim,Vertical,Arial";
+			}
+			.bt a:hover{
+			display:block;
+			border:#999999;
+			padding-top:4px;
+			text-decoration: none;
+			background:#e5e5e7;
+			color:#565656;
+			font-size:11px;
+			}
 		</style>
+
 
 	</head>
 
@@ -57,10 +76,13 @@
 <?php
 $n = 1;
 while($row = mysqli_fetch_array($result)){
-echo '<div class="item">';
-echo '<img src="example.jpg" style="float: left">';
+echo'<form method="post" id="frm'.$n.'" name="frm'.$n.'" action="07SeeRecipe.php">';
+echo '<div class="bt">';
+echo '<a href="#" onclick="document.getElementById(\'frm'.$n.'\').submit();">';
+echo '<img src="example'.$n.'.jpg" style="float: left">';
 echo "<div><h1>". $row['Cook_Title'] ."</h1><p>".$row['Cook_info']."</p></div>";
-echo '</div>';
+echo '<input style="display:none" name="recinum" id="recinum" value='.$n.' /></a></div>';
+echo '</form>';
 $n++;
 }
 mysqli_close($conn);

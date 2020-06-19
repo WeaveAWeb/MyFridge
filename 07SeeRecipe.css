@@ -1,0 +1,159 @@
+body{
+	background-image: url("backgroundimage.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+#header{
+	height: 30px;
+	font-size: 20px;
+	float: right;
+
+	margin: 30px;
+}
+
+#nav{
+	text-align: center;
+	color: white;
+	letter-spacing: 15px;
+
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+#content{
+	color: black;
+	background-color: white;
+	text-align: center;
+
+	padding: 50px;
+}
+
+.line{
+	margin: 20px;
+}
+#fixed{
+	position: fixed;
+	top: 400px;
+	right: -100px;
+	transform: rotate(270deg);
+	color: white;
+	font-size:20px;
+}
+
+#footer{
+
+
+}
+
+#btn_done{
+	border: 0.3rem outset rgb(98,106,126);
+	border-radius: 12px;
+	outline: 0px;
+	color: rgb(98,106,126);
+	background-color: white;
+	font-size: 25px;
+	font-weight: bold;
+
+	margin-left: 10px;
+	padding: 15px 30px 15px 30px;
+}
+
+#btn_done:active{
+	color: white;
+	background-color: rgb(98,106,126);
+	font-weight: normal;
+}
+
+ul{
+	display: inline;
+	margin-right: 30px;
+}
+
+ul li{
+	display: inline;
+}
+
+ul li a{
+	color: white;
+	padding: 10px 20px 10px 20px;
+}
+
+ul li a:hover{
+	color: white;
+	text-decoration: none;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+select{
+	height: 25px;
+	width: 100px;
+}
+
+#title{
+	margin: 0px;
+}
+
+.h2{
+	font-size: 80px;
+}
+
+.sub{
+	color: black;
+	font-size: 25px;
+}
+
+.sub:hover{
+	color: black;
+	text-decoration: none;
+}
+
+#fridge{
+	background-color: rgba(255, 255, 255, 0.2);
+
+	padding: 15px;
+	margin: 0px 300px 100px 300px;
+}
+
+img{
+	width: 350px;
+	height: 250px;
+}
+
+#imageDiv{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.icon{
+	font-size: 70px;
+}
+
+#foodTitle{
+	font-size: 50px;
+}
+
+#foodInfo{ /* 레시피 설명 */
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+}
+
+.foodInfo2{ /* 카테고리 */
+	font-size: 18px;
+	display: inline;
+}
+
+.iconInfo{
+	font-size: 20px;
+}
+
+#material{
+	font-size: 20px;
+	display: inline;
+}
+
+#step{
+	font-size: 20px;
+}

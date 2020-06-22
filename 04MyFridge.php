@@ -35,12 +35,6 @@ $row_carrot = mysqli_fetch_array($result_carrot);
 $query_cucumber="SELECT SUM(amount) FROM fridge_tb WHERE name='cucumber'";
 $result_cucumber=mysqli_query($dbConnect,$query_cucumber);
 $row_cucumber = mysqli_fetch_array($result_cucumber);
-$query_butter="SELECT SUM(amount) FROM fridge_tb WHERE name='butter'";
-$result_butter=mysqli_query($dbConnect,$query_butter);
-$row_butter = mysqli_fetch_array($result_butter);
-$query_cheese="SELECT SUM(amount) FROM fridge_tb WHERE name='cheese'";
-$result_cheese=mysqli_query($dbConnect,$query_cheese);
-$row_cheese = mysqli_fetch_array($result_cheese);
 //재료 보유량 읽어오기-유제품
 $query_pizzaCheese="SELECT SUM(amount) FROM fridge_tb WHERE name='pizzaCheese'";
 $result_pizzaCheese=mysqli_query($dbConnect,$query_pizzaCheese);
@@ -64,7 +58,15 @@ $row_mackerel = mysqli_fetch_array($result_mackerel);
 $query_shrimp="SELECT SUM(amount) FROM fridge_tb WHERE name='shrimp'";
 $result_shrimp=mysqli_query($dbConnect,$query_shrimp);
 $row_shrimp = mysqli_fetch_array($result_shrimp);
-
+$query_kim="SELECT SUM(amount) FROM fridge_tb WHERE name='kim'";
+$result_kim=mysqli_query($dbConnect,$query_kim);
+$row_kim = mysqli_fetch_array($result_kim);
+$query_tuna="SELECT SUM(amount) FROM fridge_tb WHERE name='tuna'";
+$result_tuna=mysqli_query($dbConnect,$query_tuna);
+$row_tuna = mysqli_fetch_array($result_tuna);
+$query_seaweed="SELECT SUM(amount) FROM fridge_tb WHERE name='seaweed'";
+$result_seaweed=mysqli_query($dbConnect,$query_seaweed);
+$row_seaweed = mysqli_fetch_array($result_seaweed);
 mysqli_close($dbConnect);
 ?>
 
